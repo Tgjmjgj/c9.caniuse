@@ -9,4 +9,4 @@
 - Uses information from http://caniuse.com/
 - Highlighting a feature will give browser support information on bottom bar
 
-> <img src="github.com/ozcanovunc/c9.caniuse/blob/master/samples/sample1.png" width="300">
+<img src="/samples/sample1.png" width="300">
