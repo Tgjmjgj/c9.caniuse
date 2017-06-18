@@ -35,6 +35,7 @@ define(function(require, exports, module) {
         return results[0];
     }
 
+    // TODO: Buggy, improve
     function getMinimumSupportedVersion(browserVersions) {
         var minVersion = null;
         Object.keys(browserVersions).forEach(function(version) {
