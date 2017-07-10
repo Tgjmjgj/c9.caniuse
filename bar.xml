@@ -1,6 +1,6 @@
 <a:application xmlns:a="http://ajax.org/2005/aml">
     <a:bar id="caniuse-bar" skin="bar-status" skinset="c9statusbar" class="caniuse-bar" style="display:none;">
-        <a:label caption="CR" />
+        <a:label caption="CR" tooltip="Chrome" />
         <a:label id="caniuse-chrome-version" />
         <a:label id="caniuse-chrome-check" class="fa fa-check" />
         <a:label id="caniuse-chrome-uncheck" class="fa fa-times" />
