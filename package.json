@@ -14,6 +14,9 @@
         "caniuse",
         "c9"
     ],
+    "plugins": {
+        "index": {}
+    },
     "author": "Ozcan Ovunc",
     "license": "MIT",
     "bugs": {
@@ -22,5 +25,6 @@
     "homepage": "https://github.com/ozcanovunc/c9.caniuse#readme",
     "dependencies": {
         "caniuse-db": "git+https://github.com/Fyrd/caniuse.git"
-    }
+    },
+    "categories": ["smartface"]
 }
