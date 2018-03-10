@@ -1,37 +1,3 @@
-define("plugins/caniuse/package.caniuse", [], {
-    "name": "caniuse",
-    "description": "Cloud9 language support for caniuse",
-    "version": "0.1.0",
-    "author": "Aaron Bawcom",
-    "contributors": [
-        {
-            "name": "Aaron Bawcom",
-            "email": "abawcom@gmail.com"
-        }
-    ],
-    "permissions": "world",
-    "engines": {
-        "c9": ">=3.0.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/tgjmjgj/c9.caniuse.git"
-    },
-    "categories": [
-        "language"
-    ],
-    "licenses": [
-        "MIT"
-    ],
-    "c9": {
-        "plugins": [
-            {
-                "packagePath": "plugins/caniuse/caniuse"
-            }
-        ]
-    }
-});
-
 define("plugins/caniuse/caniuse",
        [],
        function(require, exports, module) {
