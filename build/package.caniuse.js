@@ -86,8 +86,8 @@ define("plugins/caniuse/caniuse",
         var css1 = require("plugins/caniuse/mode/extensions");
         var css2 = require("text!./mode/extensions");
         var css3 = require("./mode/extensions");
-        var css4 = require("https://tgjmjgj.github.io/c9.caniuse/build/mode/extensions");
-        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/build/mode/extensions");
+        var css4 = require("https://tgjmjgj.github.io/c9.caniuse/build/mode/extensions.js");
+        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/build/mode/extensions.js");
         console.log("css is \n" + css);
         console.log("css1 is \n" + css1);
         console.log("css2 is \n" + css2);
