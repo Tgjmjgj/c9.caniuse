@@ -51,8 +51,8 @@ define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
         var extensions = require("./src/extensions");
         var caniuse = require("./src/caniuse");
 
-        var markup = require("text!./bar.xml");
-        var css = require("text!./bar.less");
+        var markup = require("./bar.xml");
+        var css = require("./bar.less");
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
