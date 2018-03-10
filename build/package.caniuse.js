@@ -1,5 +1,5 @@
-define("plugins/plugin.ide.language.caniuse/package.plugin.ide.language.caniuse", [], {
-    "name": "plugin.ide.language.caniuse",
+define("plugins/caniuse/package.caniuse", [], {
+    "name": "caniuse",
     "description": "Cloud9 language support for caniuse",
     "version": "0.1.0",
     "author": "Aaron Bawcom",
@@ -26,13 +26,13 @@ define("plugins/plugin.ide.language.caniuse/package.plugin.ide.language.caniuse"
     "c9": {
         "plugins": [
             {
-                "packagePath": "plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse"
+                "packagePath": "plugins/caniuse/caniuse"
             }
         ]
     }
 });
 
-define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
+define("plugins/caniuse/caniuse",
        [],
        function(require, exports, module) {
     main.consumes = ["Plugin", "tabManager", "ui", "ace"];
@@ -48,8 +48,8 @@ define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
         var ui = imports.ui;
         var ace = imports.ace;
         var path = require("path");
-        var extensions = require("plugins/plugin.ide.language.caniuse/src/extensions");
-        var caniuse = require("plugins/plugin.ide.language.caniuse/src/caniuse");
+        var extensions = require("plugins/caniuse/mode/extensions");
+        var caniuse = require("plugins/caniuse/mode/caniuse");
         console.log("extensions:\n" + extensions);
         console.log("caniuse:\n" + caniuse);
         var markup = `
