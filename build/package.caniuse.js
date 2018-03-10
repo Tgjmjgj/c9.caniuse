@@ -82,12 +82,12 @@ define("plugins/caniuse/caniuse",
                 </a:bar>
             </a:application>
         `
-        var css = require("text!plugins/caniuse/bar.less");
-        var css1 = require("plugins/caniuse/bar.less");
-        var css2 = require("text!./bar.less");
-        var css3 = require("./bar.less");
-        var css4 = require("https://tgjmjgj.github.io/c9.caniuse/build/bar.less");
-        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/build/bar.less");
+        var css = require("text!plugins/caniuse/mode/extensions");
+        var css1 = require("plugins/caniuse/mode/extensions");
+        var css2 = require("text!./mode/extensions");
+        var css3 = require("./mode/extensions");
+        var css4 = require("https://tgjmjgj.github.io/c9.caniuse/build/mode/extensions");
+        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/build/mode/extensions");
         console.log("css is \n" + css);
         console.log("css1 is \n" + css1);
         console.log("css2 is \n" + css2);
