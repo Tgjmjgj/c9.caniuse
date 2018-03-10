@@ -1,4 +1,40 @@
-define(function(require, exports, module) {
+define("plugins/plugin.ide.language.caniuse/package.plugin.ide.language.caniuse", [], {
+    "name": "plugin.ide.language.caniuse",
+    "description": "Cloud9 language support for caniuse",
+    "version": "0.1.0",
+    "author": "Aaron Bawcom",
+    "contributors": [
+        {
+            "name": "Aaron Bawcom",
+            "email": "abawcom@gmail.com"
+        }
+    ],
+    "permissions": "world",
+    "engines": {
+        "c9": ">=3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/tgjmjgj/c9.caniuse.git"
+    },
+    "categories": [
+        "language"
+    ],
+    "licenses": [
+        "MIT"
+    ],
+    "c9": {
+        "plugins": [
+            {
+                "packagePath": "plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse"
+            }
+        ]
+    }
+});
+
+define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
+       [],
+       function(require, exports, module) {
     main.consumes = ["Plugin", "tabManager", "ui", "ace"];
     main.provides = ["c9.caniuse"];
     return main;
