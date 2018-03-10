@@ -50,7 +50,8 @@ define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
         var path = require("path");
         var extensions = require("plugins/plugin.ide.language.caniuse/src/extensions");
         var caniuse = require("plugins/plugin.ide.language.caniuse/src/caniuse");
-
+        console.log("extensions:\n" + extensions);
+        console.log("caniuse:\n" + caniuse);
         var markup = `
             <a:application xmlns:a="http://ajax.org/2005/aml">
                 <a:bar id="caniuse-bar" skin="bar-status" skinset="c9statusbar" class="caniuse-bar" style="display:none;">
