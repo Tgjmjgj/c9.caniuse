@@ -82,20 +82,8 @@ define("plugins/caniuse/caniuse",
                 </a:bar>
             </a:application>
         `
-        var css = `
-            .caniuse {
-                &-bar {
-                    position: absolute;
-                    left: 50px;
-                    bottom: 3px;
-                    z-index: 10000;
-                    height: 23px;
-                }
-                &-marginLeft {
-                    margin-left: 5px;
-                }
-            }
-        `
+        var css = require("text!plugins/caniuse/bar.less");
+        console.log("css is \n" + css);
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
