@@ -48,8 +48,8 @@ define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
         var ui = imports.ui;
         var ace = imports.ace;
         var path = require("path");
-        var extensions = [".css", ".less"]
-        var caniuse = require("./src/caniuse");
+        var extensions = require("plugins/plugin.ide.language.caniuse/src/extensions");
+        var caniuse = require("plugins/plugin.ide.language.caniuse/src/caniuse");
 
         var markup = `
             <a:application xmlns:a="http://ajax.org/2005/aml">

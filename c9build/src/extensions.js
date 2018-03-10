@@ -1,1 +1,4 @@
-module.exports = [".css", ".less"];
+define(function(require, exports, module) {
+    "use strict";
+    module.exports = [".css", ".less"];
+});

@@ -1,8 +1,8 @@
 define(function(require, exports, module) {
     "use strict";
 
-    var browsers = require("./browsers");
-    var data = require("./data.json");
+    var browsers = require("plugins/plugin.ide.language.caniuse/src/browsers");
+    var data = require("plugins/plugin.ide.language.caniuse/src/data.json");
     data = JSON.parse(data).data;
 
     module.exports = function(feature) {
