@@ -51,8 +51,50 @@ define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
         var extensions = require("./src/extensions");
         var caniuse = require("./src/caniuse");
 
-        var markup = require("./bar.xml");
-        var css = require("./bar.less");
+        var markup = `
+            <a:application xmlns:a="http://ajax.org/2005/aml">
+                <a:bar id="caniuse-bar" skin="bar-status" skinset="c9statusbar" class="caniuse-bar" style="display:none;">
+                    <a:label caption="CR" tooltip="Chrome" />
+                    <a:label id="caniuse-chrome-version" />
+                    <a:label id="caniuse-chrome-check" class="fa fa-check" />
+                    <a:label id="caniuse-chrome-uncheck" class="fa fa-times" />
+            
+                    <a:label caption="Edge" class="caniuse-marginLeft" />
+                    <a:label id="caniuse-edge-version" />
+                    <a:label id="caniuse-edge-check" class="fa fa-check" />
+                    <a:label id="caniuse-edge-uncheck" class="fa fa-times" />
+            
+                    <a:label caption="FF" class="caniuse-marginLeft" />
+                    <a:label id="caniuse-firefox-version" />
+                    <a:label id="caniuse-firefox-check" class="fa fa-check" />
+                    <a:label id="caniuse-firefox-uncheck" class="fa fa-times" />
+            
+                    <a:label caption="OP" class="caniuse-marginLeft" />
+                    <a:label id="caniuse-opera-version" />
+                    <a:label id="caniuse-opera-check" class="fa fa-check" />
+                    <a:label id="caniuse-opera-uncheck" class="fa fa-times" />
+            
+                    <a:label caption="SF" class="caniuse-marginLeft" />
+                    <a:label id="caniuse-safari-version" />
+                    <a:label id="caniuse-safari-check" class="fa fa-check" />
+                    <a:label id="caniuse-safari-uncheck" class="fa fa-times" />
+                </a:bar>
+            </a:application>
+        `
+        var css = `
+            .caniuse {
+                &-bar {
+                    position: absolute;
+                    left: 50px;
+                    bottom: 3px;
+                    z-index: 10000;
+                    height: 23px;
+                }
+                &-marginLeft {
+                    margin-left: 5px;
+                }
+            }
+        `
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
@@ -79,7 +121,7 @@ define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
 
             editor.once("draw", function() {
                 ui.insertCss(css, plugin);
-                console.log("markup is :\n:" + markup);
+                console.log("markup is :\n" + markup);
                 ui.insertMarkup(editor.aml, markup, plugin);
                 bar = plugin.getElement("caniuse-bar");
             }, editor);
