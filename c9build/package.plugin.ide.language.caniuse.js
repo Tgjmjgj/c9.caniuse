@@ -49,6 +49,7 @@ define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
         var ace = imports.ace;
         var path = require("path");
         var extensions = require("./src/extensions");
+        console.log("extensions:\n" + extensions);
         var caniuse = require("./src/caniuse");
 
         var markup = `
@@ -121,7 +122,6 @@ define("plugins/plugin.ide.language.caniuse/plugin.ide.language.caniuse",
 
             editor.once("draw", function() {
                 ui.insertCss(css, plugin);
-                console.log("markup is :\n" + markup);
                 ui.insertMarkup(editor.aml, markup, plugin);
                 bar = plugin.getElement("caniuse-bar");
             }, editor);
