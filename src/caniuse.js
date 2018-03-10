@@ -2,7 +2,7 @@ define(function(require, exports, module) {
     "use strict";
 
     var browsers = require("./browsers");
-    var data = require("text!../node_modules/caniuse-db/data.json");
+    var data = require("./data.json");
     data = JSON.parse(data).data;
 
     module.exports = function(feature) {
