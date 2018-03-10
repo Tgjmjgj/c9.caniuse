@@ -83,7 +83,14 @@ define("plugins/caniuse/caniuse",
             </a:application>
         `
         var css = require("text!plugins/caniuse/bar.less");
-        console.log("css is \n" + css);
+        var css1 = require("plugins/caniuse/bar.less");
+        var css2 = require("text!./bar.less");
+        var css3 = require("./bar.less");
+        var css4 = require("https://tgjmjgj.github.io/c9.caniuse/build/bar.less");
+        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/build/bar.less");
+        for (cs in [css, css1, css2, css3, css4, css5]) {
+            console.log("css is \n" + cs);
+        }
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
