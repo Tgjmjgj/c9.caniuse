@@ -1,4 +1,2 @@
-define(function(require, exports, module) {
-    "use strict";
-    module.exports = [".css", ".less"];
-});
+
+module.exports = [".css", ".less"];
