@@ -145,6 +145,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         var tabManager = imports.tabManager;
         var ui = imports.ui;
         var ace = imports.ace;
+        console.log(require);
         var path = require("path");
         var extensions = require("plugins/c9.caniuse/mode/extensions");
         var caniuse = require("plugins/c9.caniuse/mode/caniuse");
@@ -180,18 +181,20 @@ define("plugins/c9.caniuse/c9.caniuse",
                 </a:bar>
             </a:application>
         `
-        var css = require("text!plugins/c9.caniuse/mode/extensions");
-        var css1 = require("plugins/c9.caniuse/mode/extensions");
-        var css2 = require("text!./mode/extensions");
-        var css3 = require("./mode/extensions");
-        var css4 = require("https://tgjmjgj.github.io/c9.caniuse/c9build/mode/extensions.js");
-        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/c9build/mode/extensions.js");
+        var css = require("text!plugins/c9.caniuse/bar.less");
+        var css1 = require("plugins/c9.caniuse/bar.less");
+        var css2 = require("text!./bar.less");
+        var css3 = require("./bar.less");
+        var css4 = require("https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
+        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
+        var css6 = require("bar.less");
         console.log("css is \n" + css);
         console.log("css1 is \n" + css1);
         console.log("css2 is \n" + css2);
         console.log("css3 is \n" + css3);
         console.log("css4 is \n" + css4);
         console.log("css5 is \n" + css5);
+        console.log("css6 is \n" + css6);
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
