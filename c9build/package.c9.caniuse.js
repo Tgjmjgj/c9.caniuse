@@ -111,7 +111,7 @@ define("plugins/c9.caniuse/mode/caniuse",[], function(require, exports, module) 
 });
 
 define("plugins/c9.caniuse/c9.caniuse",[], function(require1, exports, module) {
-var $build_deps$ = {require: require, exports: exports, module: module};
+var $build_deps$ = {require: require1, exports: exports, module: module};
 exports = undefined; module = undefined;
 function define(name, deps, m) {
     if (typeof name == "function") {
@@ -146,6 +146,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         var tabManager = imports.tabManager;
         var ui = imports.ui;
         var ace = imports.ace;
+        console.log("name:\n" + name);
         console.log("require: \n" + require);
         console.log("require1: \n" + require1);
         console.log("require2: \n" + require2);
