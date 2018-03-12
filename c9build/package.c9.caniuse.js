@@ -145,7 +145,12 @@ define("plugins/c9.caniuse/c9.caniuse",
         var tabManager = imports.tabManager;
         var ui = imports.ui;
         var ace = imports.ace;
-        console.log(require);
+        console.log("require: \n" + require);
+        console.log("exports: \n" + exports);
+        console.log("module: \n" + module);
+        console.log("options: \n" + options);
+        console.log("imports: \n" + imports);
+        console.log("register: \n" + register);
         var path = require("path");
         var extensions = require("plugins/c9.caniuse/mode/extensions");
         var caniuse = require("plugins/c9.caniuse/mode/caniuse");
