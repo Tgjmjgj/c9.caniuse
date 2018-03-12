@@ -57,6 +57,7 @@ define("plugins/c9.caniuse/mode/caniuse",[], function(require, exports, module) 
 
     var browsers = require("plugins/c9.caniuse/mode/browsers");
     var data = require("plugins/c9.caniuse/mode/data.json");
+    console.log("data:\n" + data);
     data = JSON.parse(data).data;
 
     module.exports = function(feature) {
