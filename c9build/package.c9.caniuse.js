@@ -109,7 +109,7 @@ define("plugins/c9.caniuse/mode/caniuse",[], function(require, exports, module) 
     }
 });
 
-define("plugins/c9.caniuse/c9.caniuse",[], function(require, exports, module) {
+define("plugins/c9.caniuse/c9.caniuse",[], function(require1, exports, module) {
 var $build_deps$ = {require: require, exports: exports, module: module};
 exports = undefined; module = undefined;
 function define(name, deps, m) {
@@ -132,7 +132,7 @@ function define(name, deps, m) {
 define.amd = true;
 define("plugins/c9.caniuse/c9.caniuse",
        [],
-       function(require, exports, module) {
+       function(require2, exports, module) {
     main.consumes = ["Plugin", "tabManager", "ui", "ace"];
     main.provides = ["c9.caniuse"];
     return main;
@@ -146,6 +146,8 @@ define("plugins/c9.caniuse/c9.caniuse",
         var ui = imports.ui;
         var ace = imports.ace;
         console.log("require: \n" + require);
+        console.log("require1: \n" + require1);
+        console.log("require2: \n" + require2);
         console.log("exports: \n" + exports);
         console.log("module: \n" + module);
         console.log("options: \n" + options);
