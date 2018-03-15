@@ -218,7 +218,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         var path = require("path");
         console.log(path);
         var path1 = require1("path");
-        console.log("path1 is \n" + path1);
+        console.log(path1);
         var path2 = require2("path");
         console.log("path2 is \n" + path2);
 
