@@ -170,6 +170,10 @@ define("plugins/c9.caniuse/c9.caniuse",
         for (let a in imports.ui) {
             console.log("ui:\t" + a);
         }
+        var language = imports.language;
+        var ja = imports.jasonanalyzer;
+        console.log("language: \n" + language);
+        console.log("ja:\n" + ja);
         console.log("register: \n" + register);
         var path = require1("path");
         var extensions = require1("plugins/c9.caniuse/mode/extensions");
