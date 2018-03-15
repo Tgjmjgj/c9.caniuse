@@ -157,6 +157,9 @@ define("plugins/c9.caniuse/c9.caniuse",
         var cache = [];
         console.log("importsJSON: \n" + 
             JSON.stringify(imports, function(key, value) {
+                if (typeof value === 'undefined') {
+                    return 'undefined';
+                }
                 if (typeof value === 'object' && value !== null) {
                     if (cache.indexOf(value) !== -1) {
                         // Circular reference found, discard key
