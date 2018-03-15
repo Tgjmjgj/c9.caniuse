@@ -146,6 +146,8 @@ define("plugins/c9.caniuse/c9.caniuse",
         for (let opt in options) {
             console.log(opt);
         }
+        console.log(options.packagePath);
+        console.log(options.staticPrefix);
         console.log(options.consumes);
         console.log("imports: \n" + imports);
         console.log("importsJSON: \n");
