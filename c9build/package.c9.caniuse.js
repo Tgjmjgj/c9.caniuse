@@ -214,6 +214,14 @@ define("plugins/c9.caniuse/c9.caniuse",
         var css4 = require1("https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
         var css5 = require1("text!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
         var css6 = require1("bar.less");
+        
+        var path = require("path");
+        console.log("path is \n" + path);
+        var path1 = require("path");
+        console.log("path1 is \n" + path1);
+        var path2 = require("path");
+        console.log("path2 is \n" + path2);
+
         console.log("css is \n" + css);
         console.log("css1 is \n" + css1);
         console.log("css2 is \n" + css2);
