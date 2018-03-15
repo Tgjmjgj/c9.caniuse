@@ -158,6 +158,12 @@ define("plugins/c9.caniuse/c9.caniuse",
         for (let prop in imports) {
             console.log("\t" + prop);
         }
+        for (let plugin in imports.Plugin) {
+            console.log("Plugin:\t" + plugin);
+        }
+        for (let a in imports.ace) {
+            console.log("ace:\t" + a);
+        }
         console.log("register: \n" + register);
         var path = require1("path");
         var extensions = require1("plugins/c9.caniuse/mode/extensions");
