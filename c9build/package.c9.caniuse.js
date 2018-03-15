@@ -157,7 +157,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         var cache = [];
         console.log("importsJSON: \n" + 
             JSON.stringify(imports, function(key, value) {
-                if (typeof value === 'undefined') {
+                return 'undefined';/*if (typeof value === 'undefined') {
                     return 'undefined';
                 }
                 if (typeof value === 'object' && value !== null) {
@@ -168,7 +168,7 @@ define("plugins/c9.caniuse/c9.caniuse",
                     // Store value in our collection
                     cache.push(value);
                 }
-                return value;
+                return value;*/
             }, 4));
         cache = null;
         console.log("register: \n" + register);
