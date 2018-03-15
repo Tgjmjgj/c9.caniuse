@@ -123,7 +123,7 @@ define.amd = true;
 define("plugins/c9.caniuse/c9.caniuse",
        [],
        function(require2, exports, module) {
-    main.consumes = ["Plugin", "tabManager", "ui", "ace"];
+    main.consumes = ["Plugin", "tabManager", "ui", "ace", "fs", "language"];
     main.provides = ["c9.caniuse"];
     return main;
 
@@ -161,8 +161,11 @@ define("plugins/c9.caniuse/c9.caniuse",
         }
         var language = imports.language;
         var ja = imports.jasonanalyzer;
+        var fs = imports.fs;
         console.log("language: \n" + language);
         console.log("ja:\n" + ja);
+        console.log("fs:\n" + fs);
+
         console.log("register: \n" + register);
         var path = require1("path");
         var extensions = require1("plugins/c9.caniuse/mode/extensions");
