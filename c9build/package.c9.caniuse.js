@@ -218,7 +218,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         var css1 = require1("plugins/c9.caniuse/bar.less");
         var css2 = require1("text!./bar.less");
         var css3 = require1("./bar.less");
-        var css4 = require1("https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
+        var css4 = require1(options.staticPrefix + "/bar.less");
         var css5 = require1("text!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
         var css6 = require1("bar.less");
 
