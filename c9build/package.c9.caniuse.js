@@ -1,21 +1,9 @@
 define("plugins/c9.caniuse/package.c9.caniuse", [], {
     "name": "c9.caniuse",
-    "version": "1.0.5",
     "description": "caniuse.com plugin for Cloud9",
-    "main": "caniuse.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/tgjmjgj/c9.caniuse.git"
-    },
-    "keywords": [
-        "caniuse",
-        "c9"
-    ],
+    "version": "1.0.5",
     "author": "Ozcan Ovunc",
-    "license": "MIT",
+    "main": "caniuse.js",
     "contributors": [
         {
             "name": "Pavel Karpovich",
@@ -23,16 +11,17 @@ define("plugins/c9.caniuse/package.c9.caniuse", [], {
         }
     ],
     "permissons": "world",
-    "bugs": {
-        "url": "https://github.com/tgjmjgj/c9.caniuse/issues"
+    "engines": {
+        "c9": ">=3.0.0"
     },
-    "homepage": "https://github.com/tgjmjgj/c9.caniuse#readme",
-    "dependencies": {
-        "caniuse-db": "https://github.com/Fyrd/caniuse.git"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tgjmjgj/c9.caniuse.git"
     },
     "categories": [
-        "Extension Packs"
-    ],
+        "language"
+    ],  
+    "license": "MIT",
     "c9": {
         "plugins": [
             {
