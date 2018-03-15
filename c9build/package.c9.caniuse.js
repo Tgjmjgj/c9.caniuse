@@ -144,13 +144,13 @@ define("plugins/c9.caniuse/c9.caniuse",
         console.log("options: \n" + options);
         console.log("optionsJSON: \n");
         for (let opt in options) {
-            console.log("\t" + opt);
+            console.log(opt);
         }
-
+        console.log(options.consumes);
         console.log("imports: \n" + imports);
         console.log("importsJSON: \n");
         for (let prop in imports) {
-            console.log("\t" + prop);
+            console.log(prop);
         }
         for (let plugin in imports.Plugin) {
             console.log("Plugin:\t" + plugin);
