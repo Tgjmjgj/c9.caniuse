@@ -216,10 +216,10 @@ define("plugins/c9.caniuse/c9.caniuse",
         var css6 = require1("bar.less");
         
         var path = require("path");
-        console.log("path is \n" + path);
-        var path1 = require("path");
+        console.log(path);
+        var path1 = require1("path");
         console.log("path1 is \n" + path1);
-        var path2 = require("path");
+        var path2 = require2("path");
         console.log("path2 is \n" + path2);
 
         console.log("css is \n" + css);
