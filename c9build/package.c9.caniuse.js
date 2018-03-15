@@ -1,9 +1,8 @@
 define("plugins/c9.caniuse/package.c9.caniuse", [], {
     "name": "c9.caniuse",
-    "description": "caniuse.com plugin for Cloud9",
     "version": "1.0.5",
     "author": "Ozcan Ovunc",
-    "main": "caniuse.js",
+    "main": "c9.caniuse.js",
     "contributors": [
         {
             "name": "Pavel Karpovich",
@@ -19,83 +18,20 @@ define("plugins/c9.caniuse/package.c9.caniuse", [], {
         "url": "https://github.com/tgjmjgj/c9.caniuse.git"
     },
     "categories": [
-        "language"
-    ],  
+        "Extension Packs"
+    ],
     "license": "MIT",
+    "dependencies": {
+        "nodegit": "^0.21.1"
+    },
     "c9": {
         "plugins": [
-            {
-                "packagePath": "plugins/c9.caniuse/c9.caniuse"
-            }
+            [
+                {
+                    "packagePath": "plugins/c9.caniuse/c9.caniuse"
+                }
+            ]
         ]
-    }
-});
-
-define("plugins/c9.caniuse/mode/extensions",[], function(require, exports, module) {
-    "use strict";
-    module.exports = [".css", ".less"];
-});
-
-define("plugins/c9.caniuse/mode/browsers",[], function(require, exports, module) {
-    "use strict";
-    module.exports = ["chrome", "edge", "firefox", "opera", "safari"];
-});
-
-define("plugins/c9.caniuse/mode/caniuse",[], function(require, exports, module) {
-    "use strict";
-
-    var browsers = require("plugins/c9.caniuse/mode/browsers");
-    var data = require("plugins/c9.caniuse/mode/data.json");
-    console.log("data:\n" + data);
-    data = JSON.parse(data).data;
-
-    module.exports = function(feature) {
-        var info;
-        feature = feature.replace(/\W*/g, '');
-        info = data[feature];
-        if (!info) {
-            feature = feature && slowFind(feature);
-            info = feature && data[feature];
-        }
-        return info && getSupportVersions(info.stats) || {};
-    };
-
-    function slowFind(query) {
-        var categories, description, key, keywords, matcher, ref, ref1, results, title;
-        results = [];
-        ref = data;
-        for (key in ref) {
-            ref1 = ref[key], title =
-                ref1.title, description =
-                ref1.description, keywords =
-                ref1.keywords, categories =
-                ref1.categories;
-            matcher = (key + title + description + keywords + categories);
-            matcher = matcher.toLowerCase().replace(/\W*/g, '');
-            if (matcher.match(query)) {
-                results.push(key);
-            }
-        }
-        return results[0];
-    }
-    function getMinimumSupportedVersion(browserVersions) {
-        var minVersion = null;
-        Object.keys(browserVersions).forEach(function(version) {
-            if (browserVersions[version] === "y" && !minVersion)
-                minVersion = version;
-        });
-        return minVersion;
-    }
-
-    function getSupportVersions(stats) {
-        var report = {};
-        Object.keys(stats).forEach(function(browser) {
-            var browserVersions = stats[browser];
-            var version = getMinimumSupportedVersion(browserVersions);
-            if (browsers.indexOf(browser) > -1)
-                report[browser] = version;
-        });
-        return report;
     }
 });
 

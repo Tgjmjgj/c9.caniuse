@@ -1,41 +1,34 @@
 {
-    "name": "c9.caniuse",
-    "version": "1.0.5",
-    "description": "caniuse.com plugin for Cloud9",
-    "main": "caniuse.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/tgjmjgj/c9.caniuse.git"
-    },
-    "keywords": [
-        "caniuse",
-        "c9"
-    ],
-    "plugins": {
-        "c9.caniuse": {
-            "packagePath": "plugins/c9.caniuse/c9.caniuse"
-        }
-    },
-    "author": "Ozcan Ovunc",
-    "license": "MIT",
-    "contributors": [
-        {
-            "name": "Pavel Karpovich",
-            "email": "Chesh397@mail.ru"
-        }
-    ],
-    "permissons": "world",
-    "bugs": {
-        "url": "https://github.com/tgjmjgj/c9.caniuse/issues"
-    },
-    "homepage": "https://github.com/tgjmjgj/c9.caniuse#readme",
-    "dependencies": {
-        "caniuse-db": "https://github.com/Fyrd/caniuse.git"
-    },
-    "categories": [
-        "Extension Packs"
+  "name": "c9.caniuse",
+  "version": "1.0.5",
+  "author": "Ozcan Ovunc",
+  "main": "c9.caniuse.js",
+  "contributors": [
+    {
+      "name": "Pavel Karpovich",
+      "email": "Chesh397@mail.ru"
+    }
+  ],
+  "permissons": "world",
+  "engines": {
+    "c9": ">=3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tgjmjgj/c9.caniuse.git"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+  "license": "MIT",
+  "plugins": {
+    "c9.caniuse": [
+      {
+        "packagePath": "plugins/c9.caniuse/c9.caniuse"
+      }
     ]
+  },
+  "dependencies": {
+    "nodegit": "^0.21.1"
+  }
 }
