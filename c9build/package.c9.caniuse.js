@@ -142,6 +142,11 @@ define("plugins/c9.caniuse/c9.caniuse",
         console.log("exports: \n" + exports);
         console.log("module: \n" + module);
         console.log("options: \n" + options);
+        console.log("optionsJSON: \n");
+        for (let opt in options) {
+            console.log("\t" + opt);
+        }
+
         console.log("imports: \n" + imports);
         console.log("importsJSON: \n");
         for (let prop in imports) {
