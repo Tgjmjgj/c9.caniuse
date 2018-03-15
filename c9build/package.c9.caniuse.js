@@ -154,7 +154,18 @@ define("plugins/c9.caniuse/c9.caniuse",
         console.log("module: \n" + module);
         console.log("options: \n" + options);
         console.log("imports: \n" + imports);
-        console.log("importsJSON: \n" + JSON.stringify(imports, null, 4));
+        console.log("importsJSON: \n" + 
+            JSON.stringify(imports, function(key, value) {
+                if (typeof value === 'object' && value !== null) {
+                    if (cache.indexOf(value) !== -1) {
+                        // Circular reference found, discard key
+                        return String(value);
+                    }
+                    // Store value in our collection
+                    cache.push(value);
+                }
+                return value;
+            }, 4));
         console.log("register: \n" + register);
         var path = require1("path");
         var extensions = require1("plugins/c9.caniuse/mode/extensions");
