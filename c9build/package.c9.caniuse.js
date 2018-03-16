@@ -35,30 +35,9 @@ define("plugins/c9.caniuse/package.c9.caniuse", [], {
     }
 });
 
-define("plugins/c9.caniuse/c9.caniuse",[], function(require1, exports, module) {
-var $build_deps$ = {require: require1, exports: exports, module: module};
-exports = undefined; module = undefined;
-function define(name, deps, m) {
-    if (typeof name == "function") {
-        m = name; deps = ["require", "exports", "module"]; name = $build_deps$.module.id
-    }
-    if (typeof name !== "string") {
-        m = deps; deps = name; name = $build_deps$.module.id
-    }
-    if (!m) {
-        m = deps; deps = [];
-    }
-    var ret = typeof m == "function" ?
-        m.apply($build_deps$.module, deps.map(function(n){return $build_deps$[n] || require(n)})) : m
-    if (ret != undefined) $build_deps$.module.exports = ret;
-    if (name != $build_deps$.module.id && $build_deps$.module.define) {
-        $build_deps$.module.define(name, [], function() { return $build_deps$.module.exports });
-    }
-}
-define.amd = true;
 define("plugins/c9.caniuse/c9.caniuse",
        [],
-       function(require2, exports, module) {
+       function(require1, exports, module) {
     main.consumes = ["Plugin", "tabManager", "ui", "ace", "fs", "language"];
     main.provides = ["c9.caniuse"];
     return main;
@@ -165,6 +144,12 @@ define("plugins/c9.caniuse/c9.caniuse",
         console.log("css4 is \n" + css4);
         console.log("css5 is \n" + css5);
         console.log("css6 is \n" + css6);
+
+        var crypto = require1("crypto");
+        console.log(crypto);
+        var nodegit = require1("nodegit");
+        console.log(nodegit);
+
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
@@ -249,5 +234,4 @@ define("plugins/c9.caniuse/c9.caniuse",
             "c9.caniuse": plugin
         });
     }
-});
 });
