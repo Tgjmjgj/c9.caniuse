@@ -37,7 +37,7 @@ define("plugins/c9.caniuse/package.c9.caniuse", [], {
 
 define("plugins/c9.caniuse/c9.caniuse",
        [],
-       function(require1, exports, module) {
+       function(require, exports, module) {
     main.consumes = ["Plugin", "tabManager", "ui", "ace", "fs", "language"];
     main.provides = ["c9.caniuse"];
     return main;
@@ -52,7 +52,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         var ace = imports.ace;
         console.log("name:\n" + name);
         console.log("require: \n" + require);
-        console.log("require1: \n" + require1);
+        console.log("require: \n" + require);
         console.log("require2: \n" + require2);
         console.log("exports: \n" + exports);
         console.log("module: \n" + module);
@@ -89,9 +89,9 @@ define("plugins/c9.caniuse/c9.caniuse",
         console.log("fs:\n" + fs);
 
         console.log("register: \n" + register);
-        var path = require1("path");
-        var extensions = require1("plugins/c9.caniuse/mode/extensions");
-        var caniuse = require1("plugins/c9.caniuse/mode/caniuse");
+        var path = require("path");
+        var extensions = require("plugins/c9.caniuse/mode/extensions");
+        var caniuse = require("plugins/c9.caniuse/mode/caniuse");
         console.log("extensions:\n" + extensions);
         console.log("caniuse:\n" + caniuse);
         var markup = `
@@ -126,16 +126,16 @@ define("plugins/c9.caniuse/c9.caniuse",
         `
         var path = require("path");
         console.log(path);
-        var path1 = require1("path");
+        var path1 = require("path");
         console.log(path1);
 
-        var css = require1("text!plugins/c9.caniuse/bar.less");
-        var css1 = require1("plugins/c9.caniuse/bar.less");
-        var css2 = require1("text!./bar.less");
-        var css3 = require1("./bar.less");
-        var css4 = require1(options.staticPrefix + "/bar.less");
-        var css5 = require1("text!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
-        var css6 = require1("bar.less");
+        var css = require("text!plugins/c9.caniuse/bar.less");
+        var css1 = require("plugins/c9.caniuse/bar.less");
+        var css2 = require("text!./bar.less");
+        var css3 = require("./bar.less");
+        var css4 = require(options.staticPrefix + "/bar.less");
+        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
+        var css6 = require("bar.less");
 
         console.log("css is \n" + css);
         console.log("css1 is \n" + css1);
@@ -145,9 +145,9 @@ define("plugins/c9.caniuse/c9.caniuse",
         console.log("css5 is \n" + css5);
         console.log("css6 is \n" + css6);
 
-        var crypto = require1("crypto");
+        var crypto = require("crypto");
         console.log(crypto);
-        var nodegit = require1("nodegit");
+        var nodegit = require("nodegit");
         console.log(nodegit);
 
         var loaded = false;
