@@ -48,7 +48,6 @@ define("plugins/c9.caniuse/c9.caniuse",
         var tabManager = imports.tabManager;
         var ui = imports.ui;
         var ace = imports.ace;
-        console.log("name:\n" + name);
         console.log("require: \n" + require);
         console.log("exports: \n" + exports);
         console.log("module: \n" + module);
@@ -133,12 +132,12 @@ define("plugins/c9.caniuse/c9.caniuse",
         var nodegit = require("nodegit");
         console.log(nodegit);
 
-        var css = require("text!plugins/c9.caniuse/bar.less");
+        var css = require("syle!!plugins/c9.caniuse/bar.less");
         var css1 = require("plugins/c9.caniuse/bar.less");
-        var css2 = require("text!./bar.less");
+        var css2 = require("style!./bar.less");
         var css3 = require("./bar.less");
         var css4 = require(options.staticPrefix + "/bar.less");
-        var css5 = require("text!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
+        var css5 = require("style!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
         var css6 = require("bar.less");
 
         console.log("css is \n" + css);
