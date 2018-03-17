@@ -36,9 +36,10 @@ define("plugins/c9.caniuse/package.c9.caniuse", [], {
 define("plugins/c9.caniuse/c9.caniuse",
         [
            "text!./bar.less",
-            "./mode/extensions"
+            "./mode/extensions",
+            "path"
         ],
-       function(require, exports, module) {
+       function(a, b, c) {
     main.consumes = ["Plugin", "tabManager", "ui", "ace", "fs", "language"];
     main.provides = ["c9.caniuse"];
     return main;
@@ -51,6 +52,9 @@ define("plugins/c9.caniuse/c9.caniuse",
         var tabManager = imports.tabManager;
         var ui = imports.ui;
         var ace = imports.ace;
+        console.log("a: " + a);
+        console.log("b: " + b);
+        console.log("c: " + c);
         console.log("require: \n" + require);
         console.log("exports: \n" + exports);
         console.log("module: \n" + module);
