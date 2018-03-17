@@ -33,7 +33,8 @@ define("plugins/c9.caniuse/package.c9.caniuse", [], {
     }
 });
 
-define("plugins/c9.caniuse/c9.caniuse",
+define(["plugins/c9.caniuse/c9.caniuse",
+        "text!./bar.less"],
        [],
        function(require, exports, module) {
     main.consumes = ["Plugin", "tabManager", "ui", "ace", "fs", "language"];
