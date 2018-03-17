@@ -2,9 +2,7 @@ define(function(require, exports, module) {
     "use strict";
 
     var browsers = require("./browsers");
-    console.log("browsers is " + browsers);
     var data = require("text!./data.json");
-    console.log("data is " + data);
     data = JSON.parse(data).data;
 
     module.exports = function(feature) {

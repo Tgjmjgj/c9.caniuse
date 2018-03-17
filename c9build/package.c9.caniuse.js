@@ -60,13 +60,11 @@ define("plugins/c9.caniuse/c9.caniuse",
 
         var t = imports.Terminal;
         for (p in t)
-            console.log(p);
-        plugin.freezePublicAPI({});
+            console.log("tr: " + p);
 
         var fs = imports.fs;
         for (p in fs)
-            console.log(p);
-            
+            console.log("fs:    " + p);
         
         plugin.freezePublicAPI({});
 
