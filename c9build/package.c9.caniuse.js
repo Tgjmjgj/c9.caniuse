@@ -22,7 +22,7 @@ define("plugins/c9.caniuse/package.c9.caniuse", [], {
     ],
     "license": "MIT",
     "dependencies": {
-        "nodegit": "^0.21.1"
+        "nodegit": "https://github.com/nodegit/nodegit.git"
     },
     "c9": {
         "plugins": [
@@ -35,12 +35,14 @@ define("plugins/c9.caniuse/package.c9.caniuse", [], {
 
 define("plugins/c9.caniuse/c9.caniuse",
         [
+            "text!./bar.xml",
            "text!./bar.less",
             "./mode/extensions",
-            "path"
+            "path",
+            "./mode/caniuse"
         ],
-       function(a, b, c) {
-    main.consumes = ["Plugin", "tabManager", "ui", "ace", "fs", "language"];
+       function(markup, css, extensions, path, caniuse) {
+    main.consumes = ["Plugin", "tabManager", "ui", "ace"];
     main.provides = ["c9.caniuse"];
     return main;
 
@@ -52,111 +54,14 @@ define("plugins/c9.caniuse/c9.caniuse",
         var tabManager = imports.tabManager;
         var ui = imports.ui;
         var ace = imports.ace;
-        console.log("a: " + a);
-        console.log("b: " + b);
-        console.log("c: " + c);
-        console.log("require: \n" + require);
-        console.log("exports: \n" + exports);
-        console.log("module: \n" + module);
-        console.log("options: \n" + options);
-        console.log("optionsJSON: \n");
-        for (let opt in options) {
-            console.log(opt);
-        }
-        console.log(options.packagePath);
-        console.log(options.staticPrefix);
-        console.log(options.consumes);
-        console.log("imports: \n" + imports);
-        console.log("importsJSON: \n");
-        for (let prop in imports) {
-            console.log(prop);
-        }
-        for (let plugin in imports.Plugin) {
-            console.log("Plugin:\t" + plugin);
-        }
-        for (let a in imports.ace) {
-            console.log("ace:\t" + a);
-        }
-        for (let a in imports.tabManager) {
-            console.log("tabManager:\t" + a);
-        }
-        for (let a in imports.ui) {
-            console.log("ui:\t" + a);
-        }
-        var language = imports.language;
-        var ja = imports.jasonanalyzer;
-        var fs = imports.fs;
-        console.log("language: \n" + language);
-        console.log("ja:\n" + ja);
-        console.log("fs:\n" + fs);
-
-        console.log("register: \n" + register);
-        var path = require("path");
-        var extensions = require("./mode/extensions");
-        var caniuse = require("./mode/caniuse");
-        console.log("extensions:\n" + extensions);
-        console.log("caniuse:\n" + caniuse);
-        var markup = `
-            <a:application xmlns:a="http://ajax.org/2005/aml">
-                <a:bar id="caniuse-bar" skin="bar-status" skinset="c9statusbar" class="caniuse-bar" style="display:none;">
-                    <a:label caption="CR" tooltip="Chrome" />
-                    <a:label id="caniuse-chrome-version" />
-                    <a:label id="caniuse-chrome-check" class="fa fa-check" />
-                    <a:label id="caniuse-chrome-uncheck" class="fa fa-times" />
-            
-                    <a:label caption="Edge" class="caniuse-marginLeft" />
-                    <a:label id="caniuse-edge-version" />
-                    <a:label id="caniuse-edge-check" class="fa fa-check" />
-                    <a:label id="caniuse-edge-uncheck" class="fa fa-times" />
-            
-                    <a:label caption="FF" class="caniuse-marginLeft" />
-                    <a:label id="caniuse-firefox-version" />
-                    <a:label id="caniuse-firefox-check" class="fa fa-check" />
-                    <a:label id="caniuse-firefox-uncheck" class="fa fa-times" />
-            
-                    <a:label caption="OP" class="caniuse-marginLeft" />
-                    <a:label id="caniuse-opera-version" />
-                    <a:label id="caniuse-opera-check" class="fa fa-check" />
-                    <a:label id="caniuse-opera-uncheck" class="fa fa-times" />
-            
-                    <a:label caption="SF" class="caniuse-marginLeft" />
-                    <a:label id="caniuse-safari-version" />
-                    <a:label id="caniuse-safari-check" class="fa fa-check" />
-                    <a:label id="caniuse-safari-uncheck" class="fa fa-times" />
-                </a:bar>
-            </a:application>
-        `
-        var path = require("path");
-        console.log(path);
-        var path1 = require("path");
-        console.log(path1);
-        var crypto = require("crypto");
-        console.log(crypto);
-        var http = require("http");
-        console.log(http);
-        var util = require("util");
-        console.log(util);
-        var nodegit = require("nodegit");
-        console.log(nodegit);
-
-        var css = require("style!css!less!plugins/c9.caniuse/bar.less");
-        var css1 = require("plugins/c9.caniuse/bar.less");
-        var css2 = require("style!css!less!./bar.less");
-        var css3 = require("./bar.less");
-        var css4 = require(options.staticPrefix + "/bar.less");
-        var css5 = require("style!css!less!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
-        var css6 = require("style!css!less!bar.less");
-
-        console.log("css is \n" + css);
-        console.log("css1 is \n" + css1);
-        console.log("css2 is \n" + css2);
-        console.log("css3 is \n" + css3);
-        console.log("css4 is \n" + css4);
-        console.log("css5 is \n" + css5);
-        console.log("css6 is \n" + css6);
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
+        console.log("markup is " + markup);
+        console.log("css is " + css);
+        console.log("extensions is " + extensions);
+        console.log("path is " + path);
+        console.log("caniuse is " + caniuse);
 
         plugin.freezePublicAPI({});
 
