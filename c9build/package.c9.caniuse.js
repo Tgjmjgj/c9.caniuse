@@ -75,11 +75,14 @@ define("plugins/c9.caniuse/c9.caniuse",
         s(imports.http, "http");
         s(imports.help, "help");
         s(imports.terminal, "terminal");
-        s(imports.terminal.terminal, "t.terminal");
         s(imports.fs, "fs");
         s(imports.language, "language");
         s(imports["language.python"], "l.python");
 
+        var git = imports["scm.git"];
+        console.log(git.getStatus);
+        var status = git.getStatus();
+        console.log(status);
         
         plugin.freezePublicAPI({});
 
