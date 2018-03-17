@@ -40,10 +40,9 @@ define("plugins/c9.caniuse/c9.caniuse",
             "./mode/extensions",
             "path",
             "./mode/caniuse",
-            "crypto",
-            "nodegit"
+            "crypto"
         ],
-       function(markup, css, extensions, path, caniuse, crypto, nodegit) {
+       function(markup, css, extensions, path, caniuse, crypto) {
     main.consumes = ["Plugin", "tabManager", "ui", "ace"];
     main.provides = ["c9.caniuse"];
     return main;
@@ -60,7 +59,6 @@ define("plugins/c9.caniuse/c9.caniuse",
         var onFocusEventSet = false;
         var bar = null;
         console.log("crypto--> " + crypto);
-        console.log("nodegit--> " + nodegit);
         plugin.freezePublicAPI({});
 
         plugin.on("load", function() {
