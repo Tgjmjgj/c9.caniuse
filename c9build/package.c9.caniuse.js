@@ -57,11 +57,6 @@ define("plugins/c9.caniuse/c9.caniuse",
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
-        console.log("markup is " + markup);
-        console.log("css is " + css);
-        console.log("extensions is " + extensions);
-        console.log("path is " + path);
-        console.log("caniuse is " + caniuse);
 
         plugin.freezePublicAPI({});
 
@@ -84,6 +79,7 @@ define("plugins/c9.caniuse/c9.caniuse",
 
             editor.once("draw", function() {
                 ui.insertCss(css, plugin);
+                console.log("aml is " + editor.aml);
                 ui.insertMarkup(editor.aml, markup, plugin);
                 bar = plugin.getElement("caniuse-bar");
                 console.log("bar is " + bar);
@@ -123,7 +119,9 @@ define("plugins/c9.caniuse/c9.caniuse",
 
         function show(report) {
             report = report || {};
+            console.log(JSON.stringify(report));
             var browsers = Object.keys(report);
+            console.log("browsers: " + browsers);
             bar.$html.style.display = (browsers.length > 0) ? "" : "none";
             browsers.forEach(function(browser) {
                 var version = report[browser];
