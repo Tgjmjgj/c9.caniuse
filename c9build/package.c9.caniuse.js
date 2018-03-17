@@ -42,7 +42,7 @@ define("plugins/c9.caniuse/c9.caniuse",
             "./mode/caniuse"
         ],
        function(markup, css, extensions, path, caniuse) {
-    main.consumes = ["Plugin", "tabManager", "ui", "ace", "terminal", "fs", "help", "http", "scm", "scm.git", "language"];
+    main.consumes = ["Plugin", "tabManager", "ui", "ace", "terminal", "fs", "help", "http", "scm", "scm.git", "language", "language.python"];
     main.provides = ["c9.caniuse"];
     const std = ["deps", "developer", "registered", "time", "enabled", "loaded", "name", "getElement", "addElement",
         "addEvent", "addOther", "load", "enable", "disable", "unload", "cleanUp", "on", "once", "off", "listeners"];
@@ -71,11 +71,16 @@ define("plugins/c9.caniuse/c9.caniuse",
         };
 
         s(imports.scm, "scm");
+        s(imports.scm.git, "s.git");
+        s(imports.scm_git, "s_git");
         s(imports.http, "http");
         s(imports.help, "help");
         s(imports.terminal, "terminal");
+        s(imports.terminal.terminal, "t.terminal");
         s(imports.fs, "fs");
         s(imports.language, "language");
+        s(imports.language.python, "l.python");
+        s(imports.language_python, "l_python");
 
         
         plugin.freezePublicAPI({});
