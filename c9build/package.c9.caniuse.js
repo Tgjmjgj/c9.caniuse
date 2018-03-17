@@ -108,6 +108,7 @@ define("plugins/c9.caniuse/c9.caniuse",
                 var title = currentTab.document.title;
                 var extension = path.extname(title);
                 console.log(extension);
+                console.log("index is " + extensions.indexOf(extension));
                 if (extensions.indexOf(extension) > -1) {
                     var selectedText = ace.getCopyText() || "";
                     var report = caniuse(selectedText);
