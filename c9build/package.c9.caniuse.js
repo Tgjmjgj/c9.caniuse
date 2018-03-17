@@ -42,7 +42,7 @@ define("plugins/c9.caniuse/c9.caniuse",
             "./mode/caniuse"
         ],
        function(markup, css, extensions, path, caniuse) {
-    main.consumes = ["Plugin", "tabManager", "ui", "ace", "Terminal", "fs"];
+    main.consumes = ["Plugin", "tabManager", "ui", "ace", "Terminal", "fs", "help", "http"];
     main.provides = ["c9.caniuse"];
     return main;
 
@@ -58,11 +58,23 @@ define("plugins/c9.caniuse/c9.caniuse",
         var onFocusEventSet = false;
         var bar = null;
 
+        var http = imports.http;
+        console.log("http is " + http);
+        for (p in http)
+            console.log("http: " + p);
+
+        var help = imports.help;
+        console.log("help is " + help);
+        for (p in help)
+            console.log("help: " + p);
+
         var t = imports.Terminal;
+        console.log("Terminal is " + t);
         for (p in t)
             console.log("tr: " + p);
 
         var fs = imports.fs;
+        console.log("fs is " + fs);
         for (p in fs)
             console.log("fs:    " + p);
         
