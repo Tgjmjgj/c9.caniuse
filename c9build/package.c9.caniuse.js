@@ -78,6 +78,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         });
         ace.on("create", function(e) {
             var editor = e.editor;
+            console.log("editor is " + editor);
             if (editor.type != "ace")
                 return;
 
@@ -85,6 +86,7 @@ define("plugins/c9.caniuse/c9.caniuse",
                 ui.insertCss(css, plugin);
                 ui.insertMarkup(editor.aml, markup, plugin);
                 bar = plugin.getElement("caniuse-bar");
+                console.log("bar is " + bar);
             }, editor);
         });
 
