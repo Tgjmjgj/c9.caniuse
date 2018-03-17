@@ -2,7 +2,8 @@ define(function(require, exports, module) {
     "use strict";
 
     var browsers = require("plugins/c9.caniuse/mode/browsers");
-    var data = require("plugins/c9.caniuse/mode/data.json");
+    var data = require("text!./mode/data.json");
+    console.log("JSON is " + data);
     data = JSON.parse(data).data;
 
     module.exports = function(feature) {
