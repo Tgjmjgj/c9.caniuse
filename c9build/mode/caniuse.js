@@ -5,9 +5,6 @@ define(function(require, exports, module) {
     console.log("browsers is " + browsers);
     var data = require("text!./data.json");
     console.log("data is " + data);
-    var nodegit = require("nodegit");
-    console.log("nodegit is " + nodegit);
-    
     data = JSON.parse(data).data;
 
     module.exports = function(feature) {
