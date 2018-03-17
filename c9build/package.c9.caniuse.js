@@ -82,7 +82,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         var git = imports["scm.git"];
         console.log(git.getStatus);
         var options = {}
-        var status = git.getStatus({});
+        var status = git.getStatus({}, (e) => { console.log(e); });
         console.log(status);
         
         plugin.freezePublicAPI({});
