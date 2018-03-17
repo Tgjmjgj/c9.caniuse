@@ -132,13 +132,13 @@ define("plugins/c9.caniuse/c9.caniuse",
         var nodegit = require("nodegit");
         console.log(nodegit);
 
-        var css = require("syle!!plugins/c9.caniuse/bar.less");
+        var css = require("less!plugins/c9.caniuse/bar.less");
         var css1 = require("plugins/c9.caniuse/bar.less");
-        var css2 = require("style!./bar.less");
+        var css2 = require("less!./bar.less");
         var css3 = require("./bar.less");
         var css4 = require(options.staticPrefix + "/bar.less");
-        var css5 = require("style!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
-        var css6 = require("style!bar.less");
+        var css5 = require("less!https://tgjmjgj.github.io/c9.caniuse/c9build/bar.less");
+        var css6 = require("less!bar.less");
 
         console.log("css is \n" + css);
         console.log("css1 is \n" + css1);
