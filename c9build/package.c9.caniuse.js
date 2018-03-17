@@ -86,8 +86,8 @@ define("plugins/c9.caniuse/c9.caniuse",
 
         console.log("register: \n" + register);
         var path = require("path");
-        var extensions = require("plugins/c9.caniuse/mode/extensions");
-        var caniuse = require("plugins/c9.caniuse/mode/caniuse");
+        var extensions = require("./mode/extensions");
+        var caniuse = require("./mode/caniuse");
         console.log("extensions:\n" + extensions);
         console.log("caniuse:\n" + caniuse);
         var markup = `
@@ -194,6 +194,7 @@ define("plugins/c9.caniuse/c9.caniuse",
                 var currentTab = tabManager.focussedTab;
                 var title = currentTab.document.title;
                 var extension = path.extname(title);
+                console.log(extension);
                 if (extensions.indexOf(extension) > -1) {
                     var selectedText = ace.getCopyText() || "";
                     var report = caniuse(selectedText);
