@@ -42,7 +42,7 @@ define("plugins/c9.caniuse/c9.caniuse",
             "./mode/caniuse"
         ],
        function(markup, css, extensions, path, caniuse) {
-    main.consumes = ["Plugin", "tabManager", "ui", "ace", "Terminal", "fs", "help", "http"];
+    main.consumes = ["Plugin", "tabManager", "ui", "ace", "Terminal", "fs", "help", "http", "scm", "scm.git"];
     main.provides = ["c9.caniuse"];
     return main;
 
@@ -57,6 +57,12 @@ define("plugins/c9.caniuse/c9.caniuse",
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
+        console.log(imports);
+
+        var scm = imports.scm;
+        console.log("scm is " + scm);
+        for (p in scm)
+            console.log("scm: " + p);
 
         var http = imports.http;
         console.log("http is " + http);
