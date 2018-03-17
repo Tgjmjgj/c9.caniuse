@@ -72,12 +72,12 @@ define("plugins/c9.caniuse/c9.caniuse",
 
         s(imports.scm, "scm");
         s(imports["scm.git"], "s.git");
-        s(imports.http, "http");
+        /*s(imports.http, "http");
         s(imports.help, "help");
         s(imports.terminal, "terminal");
         s(imports.fs, "fs");
         s(imports.language, "language");
-        s(imports["language.python"], "l.python");
+        s(imports["language.python"], "l.python");*/
 
         var git = imports["scm.git"];
         console.log(git.getStatus);
