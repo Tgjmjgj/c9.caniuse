@@ -111,6 +111,7 @@ define("plugins/c9.caniuse/c9.caniuse",
                 if (extensions.indexOf(extension) > -1) {
                     var selectedText = ace.getCopyText() || "";
                     var report = caniuse(selectedText);
+                    console.log("report is " + report);
                     show(report);
                 }
                 else {
