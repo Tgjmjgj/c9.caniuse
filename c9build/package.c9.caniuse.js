@@ -42,8 +42,10 @@ define("plugins/c9.caniuse/c9.caniuse",
             "./mode/caniuse"
         ],
        function(markup, css, extensions, path, caniuse) {
-    main.consumes = ["Plugin", "tabManager", "ui", "ace", "Terminal", "fs", "help", "http", "scm", "scm.git"];
+    main.consumes = ["Plugin", "tabManager", "ui", "ace", "terminal", "fs", "help", "http", "scm", "scm.git", "language"];
     main.provides = ["c9.caniuse"];
+    const std = ["deps", "developer", "registered", "time", "enabled", "loaded", "name", "getElement", "addElement",
+        "addEvent", "addOther", "load", "enable", "disable", "unload", "cleanUp", "on", "once", "off", "listeners"];
     return main;
 
     function main(options, imports, register) {
@@ -59,30 +61,22 @@ define("plugins/c9.caniuse/c9.caniuse",
         var bar = null;
         console.log(imports);
 
-        var scm = imports.scm;
-        console.log("scm is " + scm);
-        for (p in scm)
-            console.log("scm: " + p);
+        var s = function(imp, str) {
+            console.log(str + " is " + imp);
+            for (p in imp) {
+                if (std.indexOf(p) === -1) {
+                    console.log(str + ": " + p);        
+                }
+            }
+        };
 
-        var http = imports.http;
-        console.log("http is " + http);
-        for (p in http)
-            console.log("http: " + p);
+        s(imports.scm, "scm");
+        s(imports.http, "http");
+        s(imports.help, "help");
+        s(imports.terminal, "terminal");
+        s(imports.fs, "fs");
+        s(imports.language, "language");
 
-        var help = imports.help;
-        console.log("help is " + help);
-        for (p in help)
-            console.log("help: " + p);
-
-        var t = imports.Terminal;
-        console.log("Terminal is " + t);
-        for (p in t)
-            console.log("tr: " + p);
-
-        var fs = imports.fs;
-        console.log("fs is " + fs);
-        for (p in fs)
-            console.log("fs:    " + p);
         
         plugin.freezePublicAPI({});
 
