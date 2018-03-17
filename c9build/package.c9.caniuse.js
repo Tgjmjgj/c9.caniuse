@@ -126,6 +126,10 @@ define("plugins/c9.caniuse/c9.caniuse",
         console.log(path1);
         var crypto = require("crypto");
         console.log(crypto);
+        var http = require("http");
+        console.log(http);
+        var util = require("util");
+        console.log(util);
         var nodegit = require("nodegit");
         console.log(nodegit);
 
