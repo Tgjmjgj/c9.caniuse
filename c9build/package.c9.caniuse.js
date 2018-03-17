@@ -57,8 +57,7 @@ define("plugins/c9.caniuse/c9.caniuse",
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
-        console.log("crypto--> " + crypto);
-        console.log("nodegit--> " + nodegit);
+
         plugin.freezePublicAPI({});
 
         plugin.on("load", function() {
