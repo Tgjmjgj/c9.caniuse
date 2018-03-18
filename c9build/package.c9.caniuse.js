@@ -81,6 +81,10 @@ define("plugins/c9.caniuse/c9.caniuse",
 
         var git = imports["scm.git"];
         console.log(git.getStatus);
+        console.log(git.detect);
+        console.log(git.git);
+        console.log(git.listAllRefs);
+        console.log(git.getBlame);
         var options = {}
         var status = git.getStatus({}, (e) => { console.log(e); });
         console.log(status);
