@@ -42,10 +42,8 @@ define("plugins/c9.caniuse/c9.caniuse",
             "./mode/caniuse"
         ],
        function(markup, css, extensions, path, caniuse) {
-    main.consumes = ["Plugin", "tabManager", "ui", "ace", "terminal", "fs", "help", "http", "scm", "scm.git", "language", "language.python"];
+    main.consumes = ["Plugin", "tabManager", "ui", "ace"];
     main.provides = ["c9.caniuse"];
-    const std = ["deps", "developer", "registered", "time", "enabled", "loaded", "name", "getElement", "addElement",
-        "addEvent", "addOther", "load", "enable", "disable", "unload", "cleanUp", "on", "once", "off", "listeners"];
     return main;
 
     function main(options, imports, register) {
@@ -59,35 +57,6 @@ define("plugins/c9.caniuse/c9.caniuse",
         var loaded = false;
         var onFocusEventSet = false;
         var bar = null;
-        console.log(imports);
-
-        var s = function(imp, str) {
-            console.log(str + " is " + imp);
-            for (p in imp) {
-                if (std.indexOf(p) === -1) {
-                    console.log(str + ": " + p);        
-                }
-            }
-        };
-
-        s(imports.scm, "scm");
-        s(imports["scm.git"], "s.git");
-        /*s(imports.http, "http");
-        s(imports.help, "help");
-        s(imports.terminal, "terminal");
-        s(imports.fs, "fs");
-        s(imports.language, "language");
-        s(imports["language.python"], "l.python");*/
-
-        var git = imports["scm.git"];
-        console.log(git.getStatus);
-        console.log(git.detect);
-        console.log(git.git);
-        console.log(git.listAllRefs);
-        console.log(git.getBlame);
-        var options = {}
-        var status = git.getStatus({}, (e) => { console.log(e); });
-        console.log(status);
         
         plugin.freezePublicAPI({});
 
@@ -104,16 +73,13 @@ define("plugins/c9.caniuse/c9.caniuse",
         });
         ace.on("create", function(e) {
             var editor = e.editor;
-            console.log("editor is " + editor);
             if (editor.type != "ace")
                 return;
 
             editor.once("draw", function() {
                 ui.insertCss(css, plugin);
-                console.log("aml is " + editor.aml);
                 ui.insertMarkup(editor.aml, markup, plugin);
                 bar = plugin.getElement("caniuse-bar");
-                console.log("bar is " + bar);
             }, editor);
         });
 
@@ -134,12 +100,9 @@ define("plugins/c9.caniuse/c9.caniuse",
                 var currentTab = tabManager.focussedTab;
                 var title = currentTab.document.title;
                 var extension = path.extname(title);
-                console.log(extension);
-                console.log("index is " + extensions.indexOf(extension));
                 if (extensions.indexOf(extension) > -1) {
                     var selectedText = ace.getCopyText() || "";
                     var report = caniuse(selectedText);
-                    console.log("report is " + report);
                     show(report);
                 }
                 else {
@@ -150,9 +113,7 @@ define("plugins/c9.caniuse/c9.caniuse",
 
         function show(report) {
             report = report || {};
-            console.log(JSON.stringify(report));
             var browsers = Object.keys(report);
-            console.log("browsers: " + browsers);
             bar.$html.style.display = (browsers.length > 0) ? "" : "none";
             browsers.forEach(function(browser) {
                 var version = report[browser];
